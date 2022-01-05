@@ -11,6 +11,8 @@ export const Container = styled.footer`
   position: fixed;
   bottom: 0;
   left: 0;
+
+  background-color: ${props => props.theme.colors.primary};
 `;
 
 export const Text = styled.h2`
