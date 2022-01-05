@@ -21,7 +21,7 @@ const GlobalStyle = createGlobalStyle`
     justify-content: center;
     align-items: start;
 
-    background-color: #BCC1C7;
+    background-color: #F6F1EB;
     width: 25rem;
 
     border-radius: 0px 0px 5px 5px;

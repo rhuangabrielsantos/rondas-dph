@@ -8,7 +8,7 @@ export const Container = styled.div`
 export const CollapseBox = styled.div`
   width: 25rem;
   height: auto;
-  background-color: ${props => props.theme.colors.secondary};
+  background-color: ${props => props.theme.colors.tertiary};
 
   border-radius: 5px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
@@ -21,7 +21,7 @@ export const CollapseButton = styled.button.attrs((props: any) => ({
   padding: 1rem;
   width: 25rem;
   height: auto;
-  background-color: ${props => props.theme.colors.secondary};
+  background-color: ${props => props.theme.colors.tertiary};
   border-radius: ${props =>
     props.isOpened && props.finishAnimation ? "5px" : "5px 5px 0px 0px"};
   border: none;
