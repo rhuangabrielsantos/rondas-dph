@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 import { RiHomeLine } from "react-icons/ri";
-import { CgFileDocument } from "react-icons/cg";
+import { AiOutlineLink } from "react-icons/ai";
 import { MdOutlineSpeakerNotes } from "react-icons/md";
 
 import { Container, Icon, Item, Text } from "./HeaderStyle";
@@ -11,7 +11,7 @@ export default function Header() {
   const navigate = useNavigate();
 
   const [homeIsActive, setHomeIsActive] = useState(true);
-  const [docmentsActive, setDocmentsActive] = useState(true);
+  const [importantLinksActive, setImportantLinksActive] = useState(true);
   const [speakBalloonsActive, setSpeakBalloonsActive] = useState(true);
 
   const textMotion = {
@@ -82,19 +82,19 @@ export default function Header() {
   function handleActive(path: string) {
     if (path === "/") {
       setHomeIsActive(true);
+      setImportantLinksActive(false);
       setSpeakBalloonsActive(false);
-      setDocmentsActive(false);
     }
 
-    if (path === "/documents") {
+    if (path === "/important-links") {
       setHomeIsActive(false);
-      setDocmentsActive(true);
+      setImportantLinksActive(true);
       setSpeakBalloonsActive(false);
     }
 
     if (path === "/speak-balloons") {
       setHomeIsActive(false);
-      setDocmentsActive(false);
+      setImportantLinksActive(false);
       setSpeakBalloonsActive(true);
     }
   }
@@ -120,13 +120,13 @@ export default function Header() {
       <Item
         initial="rest"
         whileHover="hover"
-        animate={docmentsActive ? "active" : "rest"}
-        onClick={() => handleRedirect("/documents")}
+        animate={importantLinksActive ? "active" : "rest"}
+        onClick={() => handleRedirect("/important-links")}
       >
         <Icon variants={iconMotion}>
-          <CgFileDocument />
+          <AiOutlineLink />
         </Icon>
-        <Text variants={textMotion}>Documentos Oficiais</Text>
+        <Text variants={textMotion}>Links Importantes</Text>
       </Item>
 
       <Item
@@ -138,7 +138,7 @@ export default function Header() {
         <Icon variants={iconMotion}>
           <MdOutlineSpeakerNotes />
         </Icon>
-        <Text variants={textMotion}>Balões de Falas</Text>
+        <Text variants={textMotion}>Balões de Fala</Text>
       </Item>
     </Container>
   );

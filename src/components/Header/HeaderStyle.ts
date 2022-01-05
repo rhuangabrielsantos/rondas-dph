@@ -12,6 +12,8 @@ export const Container = styled.header`
   position: fixed;
   top: 0;
   left: 0;
+
+  background-color: ${props => props.theme.colors.primary};
 `;
 
 export const Item = styled(motion.div)`

@@ -6,6 +6,26 @@ const GlobalStyle = createGlobalStyle`
     padding: 0;
     box-sizing: border-box;
   }
+
+  body {
+    background: #202124;
+  }
+
+  .ReactCollapse--collapse {
+    transition: height 500ms;
+  }
+
+  .ReactCollapse--content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+
+    background-color: #BCC1C7;
+    width: 25rem;
+
+    border-radius: 0px 0px 5px 5px;
+  }
 `;
 
 export default GlobalStyle;
