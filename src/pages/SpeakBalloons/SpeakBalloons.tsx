@@ -48,34 +48,34 @@ export default function SpeakBalloons() {
       ))}
       <SubTitle style={{ marginTop: "1rem" }}>Despedidas:</SubTitle>
       {Farewell.map((item, index) => (
-        <Balloon key={index} title={item} />
+        <Balloon key={index} title={item} onClick={() => handleCopy(item)} />
       ))}
       <SubTitle style={{ marginTop: "1rem" }}>Informativas:</SubTitle>
       {Informative.map((item, index) => (
-        <Balloon key={index} title={item} />
+        <Balloon key={index} title={item} onClick={() => handleCopy(item)} />
       ))}
       <SubTitle style={{ marginTop: "1rem" }}>Divertidas:</SubTitle>
       {Fun.map((item, index) => (
-        <Balloon key={index} title={item} />
+        <Balloon key={index} title={item} onClick={() => handleCopy(item)} />
       ))}
 
       <Title style={{ marginTop: "1.5rem" }}>Falas Externas:</Title>
       <SubTitle>Boas-vindas:</SubTitle>
       {WelcomeExternal.map((item, index) => (
-        <Balloon key={index} title={item} />
+        <Balloon key={index} title={item} onClick={() => handleCopy(item)} />
       ))}
       <SubTitle style={{ marginTop: "1rem" }}>Convite e eventos:</SubTitle>
       {Invite.map((item, index) => (
-        <Balloon key={index} title={item} />
+        <Balloon key={index} title={item} onClick={() => handleCopy(item)} />
       ))}
       <SubTitle style={{ marginTop: "1rem" }}>Despedida:</SubTitle>
       {FarewellExternal.map((item, index) => (
-        <Balloon key={index} title={item} />
+        <Balloon key={index} title={item} onClick={() => handleCopy(item)} />
       ))}
 
       <Title style={{ marginTop: "1.5rem" }}>Falas para os Fiscais:</Title>
       {FiscalLines.map((item, index) => (
-        <Balloon key={index} title={item} />
+        <Balloon key={index} title={item} onClick={() => handleCopy(item)} />
       ))}
 
       <ToastContainer
