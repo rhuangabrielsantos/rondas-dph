@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 import { CgFileDocument } from "react-icons/cg";
 import { BsFileEarmarkSpreadsheet } from "react-icons/bs";
@@ -27,13 +28,24 @@ import {
   UnidadeRecrutamento,
 } from "../../links";
 
+import { validatePassword } from "../../utils/secret";
+
 import { Container, Content, Link } from "./ImportantLinksStyle";
 
 export default function ImportantLinks() {
+  const navigate = useNavigate();
+
   const [unitsManualCollapse, setUnitsManualCollapse] = useState(false);
   const [othersManualCollapse, setOthersManualCollapse] = useState(false);
   const [spreadSheetCollapse, setSpreadSheetCollapse] = useState(false);
   const [formsCollapse, setFormsCollapse] = useState(false);
+
+  useEffect(() => {
+    const secret = localStorage.getItem("secret") as string;
+    if (!validatePassword(secret)) {
+      navigate("/secret");
+    }
+  }, [navigate]);
 
   return (
     <Container>

@@ -1,3 +1,5 @@
+import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
@@ -16,13 +18,24 @@ import {
   WelcomeExternal,
 } from "../../speaks";
 
+import { validatePassword } from "../../utils/secret";
+
 import { Container, Title, SubTitle } from "./SpeakBalloonsStyle";
 
 export default function SpeakBalloons() {
+  const navigate = useNavigate();
+
   function handleCopy(title: string) {
     navigator.clipboard.writeText(title);
     toast.success("Copiado!");
   }
+
+  useEffect(() => {
+    const secret = localStorage.getItem("secret") as string;
+    if (!validatePassword(secret)) {
+      navigate("/secret");
+    }
+  }, [navigate]);
 
   return (
     <Container>
