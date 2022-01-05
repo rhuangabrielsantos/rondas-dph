@@ -1,12 +1,21 @@
 import styled from "styled-components";
 
-export const Container = styled.div`
+export const Content = styled.div`
   display: flex;
-  flex-direction: column;
   align-items: center;
+  justify-content: center;
+`;
 
-  background-color: orange;
+export const HabboImage = styled.img`
+  width: 7rem;
+  height: auto;
+`;
 
-  width: 100vw;
-  height: 100vh;
+export const Title = styled.h1`
+  font-size: 4rem;
+  text-align: center;
+
+  font-family: "Grenze Gotisch", sans-serif;
+
+  color: ${props => props.theme.colors.tertiary};
 `;
